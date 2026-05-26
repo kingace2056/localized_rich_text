@@ -1,3 +1,7 @@
+## 0.0.8
+
+- added SPM support and removed Cocoapods
+
 ## 0.0.7
 
 - Requires Dart `3.0` or later.

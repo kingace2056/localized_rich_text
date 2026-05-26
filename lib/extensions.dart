@@ -7,28 +7,28 @@ extension CustomListLocalizedRichTextKey on List<LocalizedRichTextKey> {
   ///The `keys` have to be translated in the same order like they are declared in the [text] to localize
   List<LocalizedRichTextKey> orderedByText(List<String> textSplitted) {
     try {
-      final _keys = map((i) => i.key).toList();
+      final keys = map((i) => i.key).toList();
 
-      final List<LocalizedRichTextKey> _listToReturn = [];
+      final List<LocalizedRichTextKey> listToReturn = [];
 
       if (textSplitted.isNotEmpty) {
-        for (final _key in _keys) {
+        for (final key in keys) {
           String keyFounded = '';
 
-          for (final _ in textSplitted) {
-            keyFounded += _;
+          for (final __ in textSplitted) {
+            keyFounded += __;
 
-            if (keyFounded.contains(_key)) {
-              final keyToAdd = firstWhere((element) => element.key == _key);
+            if (keyFounded.contains(key)) {
+              final keyToAdd = firstWhere((element) => element.key == key);
 
-              if (!_listToReturn.contains(keyToAdd)) {
-                _listToReturn.add(keyToAdd);
+              if (!listToReturn.contains(keyToAdd)) {
+                listToReturn.add(keyToAdd);
               }
               break;
             }
           }
         }
-        return _listToReturn;
+        return listToReturn;
       }
       return this;
     } catch (e) {

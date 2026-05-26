@@ -1,7 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/simonebruziches/Developer/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/simonebruziches/Desktop/app/my_plugin/localized_rich_text/example"
+export "FLUTTER_ROOT=/Users/sarthak/Development/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/sarthak/Documents/Acid/eleven_hype_flutter/packages/localized_rich_text/example"
+export "FLUTTER_FRAMEWORK_SWIFT_PACKAGE_PATH=/Users/sarthak/Documents/Acid/eleven_hype_flutter/packages/localized_rich_text/example/macos/Flutter/ephemeral/Packages/.packages/FlutterFramework"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

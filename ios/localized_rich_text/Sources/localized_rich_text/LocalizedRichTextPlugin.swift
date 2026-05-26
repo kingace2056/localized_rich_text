@@ -1,14 +1,19 @@
 import Flutter
 import UIKit
 
-public class SwiftLocalizedRichTextPlugin: NSObject, FlutterPlugin {
+public class LocalizedRichTextPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "localized_rich_text", binaryMessenger: registrar.messenger())
-    let instance = SwiftLocalizedRichTextPlugin()
+    let instance = LocalizedRichTextPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    switch call.method {
+    case "getPlatformVersion":
+      result("iOS " + UIDevice.current.systemVersion)
+    default:
+      result(FlutterMethodNotImplemented)
+    }
   }
 }

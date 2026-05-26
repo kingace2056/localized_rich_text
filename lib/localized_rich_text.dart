@@ -1,4 +1,4 @@
-library localized_rich_text;
+library;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +87,7 @@ class LocalizedRichText extends StatelessWidget {
   final TextHeightBehavior? textHeightBehavior;
 
   LocalizedRichText({
-    Key? key,
+    super.key,
     required this.text,
     required this.defaultTextStyle,
     required this.keys,
@@ -101,10 +101,7 @@ class LocalizedRichText extends StatelessWidget {
     this.strutStyle,
     this.textWidthBasis = TextWidthBasis.parent,
     this.textHeightBehavior,
-  })  : assert(
-          text.isNotEmpty && keys.isNotEmpty,
-        ),
-        super(key: key);
+  }) : assert(text.isNotEmpty && keys.isNotEmpty);
 
   @override
   Widget build(BuildContext context) {
@@ -120,10 +117,7 @@ class LocalizedRichText extends StatelessWidget {
       strutStyle: strutStyle,
       textWidthBasis: textWidthBasis,
       textHeightBehavior: textHeightBehavior,
-      text: TextSpan(
-        text: '',
-        children: richTextChildren,
-      ),
+      text: TextSpan(text: '', children: richTextChildren),
     );
   }
 
@@ -133,9 +127,7 @@ class LocalizedRichText extends StatelessWidget {
     //Text to localize
     String localizedText = text;
 
-    final _keys = keys.orderedByText(
-      text.characters.toList(),
-    );
+    final _keys = keys.orderedByText(text.characters.toList());
 
     for (final localizedKey in _keys) {
       //Key dynamic value
@@ -146,11 +138,7 @@ class LocalizedRichText extends StatelessWidget {
 
       //Add the textBeforeTheKey if present
       if (textBeforeTheKey.isNotEmpty) {
-        _addTextSpan(
-          textSpans,
-          textBeforeTheKey,
-          defaultTextStyle,
-        );
+        _addTextSpan(textSpans, textBeforeTheKey, defaultTextStyle);
       }
 
       //Add the custom TextSpan
@@ -167,11 +155,7 @@ class LocalizedRichText extends StatelessWidget {
       if (localizedKey == _keys.last) {
         //Add the textAfterTheKey if present
         if (textAfterTheKey.isNotEmpty) {
-          _addTextSpan(
-            textSpans,
-            textAfterTheKey,
-            defaultTextStyle,
-          );
+          _addTextSpan(textSpans, textAfterTheKey, defaultTextStyle);
         }
       } else {
         localizedText = textAfterTheKey;

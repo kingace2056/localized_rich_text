@@ -5,6 +5,8 @@
 *.swp
 .DS_Store
 .atom/
+.build/
+.swiftpm/
 .buildlog/
 .history
 .svn/
@@ -27,3 +29,4 @@
 .dart_tool/
 .packages
 build/
+example/macos/Flutter/ephemeral/flutter_export_environment.sh

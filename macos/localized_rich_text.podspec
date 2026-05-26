@@ -1,6 +1,6 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint localized_rich_text.podspec` to validate before publishing.
+# Run `pod lib lint macos/localized_rich_text.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
   s.name             = 'localized_rich_text'
@@ -14,10 +14,9 @@ A flutter plugin to facilitate the localization of a RichText.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'localized_rich_text/Sources/localized_rich_text/**/*.swift'
-  s.dependency 'Flutter'
-  s.platform = :ios, '13.0'
+  s.dependency 'FlutterMacOS'
+  s.platform = :osx, '10.15'
 
-  # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.swift_version = '5.9'
 end
